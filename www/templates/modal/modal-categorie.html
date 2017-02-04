@@ -1,0 +1,14 @@
+ <ion-modal-view>
+    <ion-header-bar align-title="center" class="bar bar-header bar-stable">
+        <button class="button button-icon button-clear ion-chevron-left" ng-click="modal_categorie2.hide()">
+        </button>
+        <h1 class="title">Categorie</h1>
+    </ion-header-bar>
+    <ion-content class="padding">
+        <ion-list>
+            <ion-radio ng-model="categorie2" ng-value="''"  ng-click="SetmodalCategorie(categorie2)">ALL</ion-radio> 
+           <ion-radio  ng-repeat= " categorie in search_categorie" ng-model="categorie2" ng-value="'{{categorie.cat_id}},{{categorie.cat_name}}'" ng-click="SetmodalCategorie(categorie2)">{{categorie.cat_name}} </ion-radio> 
+
+        </ion-list>
+    </ion-content>
+</ion-modal-view>

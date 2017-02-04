@@ -1,0 +1,41 @@
+<ion-view hide-nav-bar="true" class="offer">
+    <!-- <div ng-repeat="pro_offer1 in product_offer | filter:{ pro_id : Params_product }"> -->
+        <div class="bar bar-header bar-stable item-input-inset">
+            <button class="button button-icon button-clear ion-chevron-left" ng-click="myGoBack()">
+            </button>
+            <h1 class="title">
+        Your Offer
+        </h1>
+            <button class="button button-icon button-clear ion-checkmark" name="button" ng-click="Add_chat_data();Update_chat_status();Log_Data()" ui-sref="search.chat({id:Params_product,seller:Params_seller,buyer:login_Params.userid})">
+            </button>
+     
+        
+        </div>
+        
+        <ion-content class="content">
+            <div class="card no-padding no-margin">
+                <a class="item item-thumbnail-left" href="#">
+                    <img src="{{server}}:{{port}}/api/v2/files/img/{{pro_data.pro_photo.split(',')[0]}}?api_key={{api_key}}"">
+                    <h3>{{pro_offer1.pro_name}}</h3><br><br>
+                    <label class="text">{{pro_data.pro_price| number : 2}} </label>
+                </a>
+            </div>
+            <div>
+                <h5 class="padding">
+                Make an offer to buy this item!
+            </h5>
+                <div class="row text-center">
+                    <div class="col">
+                        <input type="text" name="" value="" class="input-offer" ng-model="$parent.pro_price">
+                    </div>
+                </div>
+                <p class="text-center padding">
+                    Tap to change
+                </p>
+            </div>
+   
+    </ion-content>
+ <!-- 
+      </div> -->
+
+</ion-view>

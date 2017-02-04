@@ -1,0 +1,32 @@
+<ion-view >
+    <ion-content class="content">
+   <div>
+  <!--   <button type="button" ng-click="backLinkClick()">RELOAD</button> -->
+   </div>
+        <div class="row" ng-repeat = "l in product ">
+            <div class="col col-100 " >
+                <div class="list card no-margin" >
+
+                 <!--      <div class="item item-avatar" >
+               
+                                     </div>  -->
+                                       <a  style="margin-left:20px">{{l.pro_name}}</a>
+                    <div class="item item-body" ui-sref="search.detail({id:l.pro_id})"><center>
+                        <img src="{{server}}:{{port}}/api/v2/files/img/{{l.pro_photo.split(',')[0]}}?api_key={{api_key}}" ui-sref="search.detail({id:1})"  style="width:100%;height:100%"></center>
+                        <p class="item-body-text" style="text-align:left" >{{l.pro_detail}} </p>
+                        <p class="item-body-text" style="text-align:left">{{l.pro_price}}</p>
+                        </h3>
+                    </div>
+                  <div class="item tabs tabs-secondary tabs-icon-left">
+                          <a class="tab-item like-box" style="color:{{like[$index]}};" ng-click="btn_like(l.pro_id)">
+                            <i class="icon ion-ios-heart" ></i>{{like_qut[$index]}}  Like
+                        </a>
+                        <a class="tab-item" href="">
+                            <i class="icon ion-android-share"></i> Share
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </ion-content>
+</ion-view>

@@ -1,0 +1,61 @@
+<ion-view hide-nav-bar="true">
+    <div class="bar bar-header bar-stable item-input-inset">
+        <button class="button button-icon button-clear ion-chevron-left" ng-click="myGoBack()">
+        </button>
+        <h1 class="title">Edit Profile</h1>
+        <button class="button button-icon button-clear ion-checkmark" ng-click="save_edit_user()">
+        </button>
+    </div>
+    <ion-content class="editprofile content padding">
+
+        <h3>PUBLIC PROFILE</h3>
+        <div class="list">
+          <label class="item item-input item-stacked-label"> <span class="input-label">Profit Id </span>
+                <input type="text" value="Prasopchokk091" placeholder="Profit Id" ng-model='login[0].face_id' ng-disabled = 'login[0].face_id' > </label>
+            <label class="item item-input item-stacked-label"> <span class="input-label">Username</span>
+                <input type="text" value="Prasopchokk091" placeholder="Username" ng-model='login[0].username'> </label>
+            <label class="item item-input item-stacked-label"> <span class="input-label">First Name</span>
+                <input type="text" value="Prasopchok" placeholder="First Name" ng-model='login[0].firstname'> </label>
+            <label class="item item-input item-stacked-label"> <span class="input-label">Last Name</span>
+                <input type="text" value="Kovtragool" placeholder="Last Name" ng-model='login[0].lastname'> </label>
+            <div class="item item-input item-select">
+                <div class="input-label">
+                    Profile Photo
+                </div>
+                
+                <img src="{{login[0].photo}}" class="photo" ng-click="changeimage()" />                
+            </div>
+            <div class="item item-input item-select">
+                    <div class="input-label">
+                        My City
+                    </div>
+                    <div ng-click="changelocation()"  >
+                       
+                <input type="text" placeholder="My City" value="login.location" ng-model= "login.location1 ">  </label>
+                    </div>
+                </div>
+
+                <h3>PRIVATE PROFILE</h3>
+                <label class="item item-input item-stacked-label"> <span class="input-label">Email</span>
+                    <input type="email" placeholder="Email" value="" ng-model= "login[0].email "> </label>
+                <label class="item item-input item-stacked-label"> <span class="input-label">Mobile</span>
+                    <input type="tel" placeholder="Mobile" ng-model = "login[0].mobile"> </label>
+                <label class="item item-input item-select">
+                    <div class="input-label">
+                        Gender
+                    </div>
+                    <select ng-model="pro_gender">
+                        <option value="Select One" >Select One</option>
+                        <option value="male">Male</option>
+                        <option value="female">Female</option>
+                    </select>
+                </label>
+                <label class="item item-input item-stacked-label"> <span class="input-label" >Birthday</span>
+                    <input type="date" placeholder="Birthday" value="login[0].birthday" ng-model="login[0].birthday" l>{{login[0].birthday}} </label>
+                <input type="text" placeholder="Birthday" value="login[0].birthday" ng-model="login[0].birthday">11
+
+             
+        </div>
+
+    </ion-content>
+</ion-view>

@@ -1,0 +1,57 @@
+<ion-view hide-nav-bar="true">
+    <div class="bar bar-header bar-stable item-input-inset">
+        <button class="button button-icon button-clear ion-chevron-left" ng-click="myGoBack()">
+        </button>
+        <h1 class="title">Stuff Like</h1>
+    </div>
+    <ion-content class="category content padding">
+        <div class="row animate-ripple">
+            <div class="col col-50">
+                <div class="list card no-margin">
+                    <div class="item item-avatar">
+                        <img src="https://scontent.fbkk1-2.fna.fbcdn.net/v/t1.0-9/12552590_927188137329842_6168921740230732836_n.jpg?oh=0c1e51e63b4cc884a0b3a2da07188a40&oe=580978FA">
+                        <p>นายปลาเค็ม ใจดี แค่เทอร์</p>
+                        <p><i class="icon ion-ios-clock-outline"></i> 1 month ago</p>
+                    </div>
+                    <div class="item item-body no-padding img-preview">
+                        <img class="" src="https://scontent.fbkk2-2.fna.fbcdn.net/v/t1.0-9/13312620_1221437667866547_1514816989782121588_n.jpg?oh=3ca42333421fe2b3024de6ad5899c076&oe=58024F65">
+                        <p class="item-body-text"> กระเป๋าแบรนด์เนม </p>
+                        <p class="item-body-text"> ฿ 5,000.00 </p>
+                        </h3>
+                    </div>
+                    <div class="item tabs tabs-secondary tabs-icon-left">
+                        <a class="tab-item" style="color:{{color[0]}}" ng-click="ClickLike(0)">
+                            <i class="icon ion-ios-heart"></i> {{count_like[0]}} Like
+                        </a>
+                        <a class="tab-item" href="">
+                            <i class="icon ion-android-share"></i> Share
+                        </a>
+                    </div>
+                </div>
+            </div>
+            <div class="col col-50">
+                <div class="list card no-margin">
+                    <div class="item item-avatar">
+                        <img src="https://scontent.fbkk1-2.fna.fbcdn.net/t31.0-8/s960x960/12901029_1068586706541502_6317454727540506776_o.jpg">
+                        <p>Saengaroon</p>
+                        <p><i class="icon ion-ios-clock-outline"></i> 1 day ago</p>
+                    </div>
+                    <div class="item item-body no-padding img-preview">
+                        <img class="" src="http://i1155.photobucket.com/albums/p550/toh1962/AP%20Red%20line/12887461_941452772569963_80054109_o%201_zps4mkcwyoj.jpg">
+                        <p class="item-body-text"> สายนาฬิกา สำหรับ AP ROO </p>
+                        <p class="item-body-text"> ฿ 8,500.00 </p>
+                        </h3>
+                    </div>
+                    <div class="item tabs tabs-secondary tabs-icon-left">
+                        <a class="tab-item" style="color:{{color[1]}}" ng-click="ClickLike(1)">
+                            <i class="icon ion-ios-heart"></i> {{count_like[1]}} Like
+                        </a>
+                        <a class="tab-item" href="">
+                            <i class="icon ion-android-share"></i> Share
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </ion-content>
+</ion-view>

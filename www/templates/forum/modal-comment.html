@@ -1,0 +1,25 @@
+<ion-modal-view>
+    <ion-header-bar align-title="center" class="bar bar-header bar-stable">
+        <button class="button button-icon button-clear ion-chevron-left" ng-click="modal_new.hide()">
+        </button>
+        <h1 class="title">Comment</h1>
+    </ion-header-bar>
+    <ion-content class="padding">
+        <div class="list" ng-repeat="comm in comm_reply ">
+            <a class="item item-avatar">
+                <img src="{{comm.photo}}"> <!-- รอ Image -->
+                <p>{{comm.firstname}} {{comm.lastname}}</p>
+                <p>{{comm.reply_comment}}</p>
+            </a>
+        </div>
+
+        <label class="item item-input">
+            <input type="text" placeholder="Comment" ng-model="reply.new_comm">
+        </label>
+
+        <button ng-click="New_Comm()" class="button button-block button-border button-positive ink">
+            Add Comment
+        </button>
+
+    </ion-content>
+</ion-modal-view>

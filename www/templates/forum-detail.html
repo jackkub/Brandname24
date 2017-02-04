@@ -1,0 +1,29 @@
+<ion-view hide-back-button="true" cache-view="false" class="detail">
+    <ion-content class="content">
+        <div class="list card" ng-repeat = "forum in forum_detail | filter : {forum_id: par_id}">
+            <div class="item item-avatar">
+                <img src="{{forum.photo}}">
+                <h3>{{forum.firstname}} {{forum.lastname}}</h3>
+                <span am-time-ago="conv_time(forum.sys_rec_datetime)"></span>
+            </div>
+            <div class="item item-body">
+                <img class="full-image" src="http://upic.me/i/qs/dsc01744.jpg">
+                <p>
+                    {{forum.forum_body}} 
+                </p>
+            </div>
+            <div class="item tabs tabs-secondary tabs-icon-left">
+                <a class="tab-item" style="color: {{color}}" data-ink-opacity="0.5" ng-click="btn_like()">
+                    <i class="icon ion-thumbsup"></i> {{like_qut}} Like
+                </a>
+                <a class="tab-item" data-ink-color="#FF5656" data-ink-opacity="0.5" ng-click="modal_new.show()">
+                    <i class="icon ion-chatbox"></i> {{ comm_reply.length }} Comments
+                </a>
+                <a class="tab-item" data-ink-color="#336699" data-ink-opacity="0.5">
+                    <i class="icon ion-share"></i> Share
+                </a>
+            </div>
+            
+        </div>
+    </ion-content>
+</ion-view>

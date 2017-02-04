@@ -1,0 +1,36 @@
+<div class="menubar">
+    <div class="bar bas-header bar-dark-100 item-input-inset">
+        <img class="title-image" src="img/logo-256.png" />
+<!--         <ion-nav-back-button class="button-clear">
+            <i class="ion-arrow-left-c"></i> Back
+        </ion-nav-back-button> -->
+        <label class="item-input-wrapper">
+            <i class="icon ion-ios-search placeholder-icon"></i>
+            <input type="search" placeholder="Search">
+        </label>
+        <button class="button button-icon button-clear ion-archive" ui-sref="search.inbox">
+            <span class="badge badge-assertive" style="top: -7px;left: -15px;padding:2px 6px;font-size:12px">5</span>
+        </button>
+    </div>
+
+    <ion-tabs class="tabs-icon-top tabs-stable fade-in-not-out">
+        <ion-tab title="BROWSE" icon="ion-location" ui-sref="app.browse">
+            <ion-nav-view name="browse" animation="slide-left-right" hide-nav-bar="true"></ion-nav-view>
+        </ion-tab>
+        <ion-tab title="FORUM" icon="ion-person-stalker" ui-sref="app.forum">
+            <ion-nav-view name="forum-footer" animation="slide-left-right" hide-nav-bar="true"></ion-nav-view>
+            <ion-nav-view name="forum" animation="slide-left-right" hide-nav-bar="true"></ion-nav-view>
+        </ion-tab>
+        <ion-tab title="SELL" icon="ion-ios-camera" ui-sref="app.sell">
+            <ion-nav-view name="sell" animation="slide-left-right" hide-nav-bar="true"></ion-nav-view>
+            <ion-nav-view name="sell-footer" animation="slide-left-right" hide-nav-bar="true"></ion-nav-view>
+        </ion-tab>
+        <ion-tab title="FOLLOWING" icon="ion-android-navigate" ui-sref="app.followmain" >
+            <ion-nav-view name="followmain" animation="slide-left-right" hide-nav-bar="true" ></ion-nav-view>
+        </ion-tab>
+        <ion-tab title="PROFILE" icon="ion-ios-person" ui-sref="app.profile">
+            <ion-nav-view name="profile" animation="slide-left-right" hide-nav-bar="true"></ion-nav-view>
+        </ion-tab>
+    </ion-tabs>
+
+</div>

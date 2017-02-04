@@ -1,0 +1,73 @@
+<ion-view id="userMessagesView" hide-nav-bar="true" class="chat">
+  
+    <div class="bar bar-header bar-stable item-input-inset">
+        <button class="button button-icon button-clear ion-chevron-left" ng-click="myGoBack()">
+        </button>
+
+        <h1 class="title" ng-repeat = "pro_duct in pro_data |filter :{pro_id : Params_product} " >
+        {{pro_duct.username}}<br>
+        <label>tab here for more info</label>
+        </h1>
+        <button class="button button-icon button-clear ion-loop" >
+        </button>
+    </div>
+    <ion-content class="content" has-bouncing="true" delegate-handle="userMessageScroll" ng-repeat = "pro_duct1 in pro_data |filter :{pro_id : Params_product} " >
+        <div class="card no-padding no-margin">
+            <a class="item item-thumbnail-left" href="#">
+                <img src="{{server}}:{{port}}/api/v2/image/img/{{pro_duct1.pro_photo.split(',')[0] }}?api_key={{api_key}}">
+                <h3>{{pro_duct1.pro_name}}</h3>
+                <label class="text">฿{{pro_duct1.pro_price}}</label>
+            </a>
+        </div>
+        
+        <div class="message-wrapper" ng-repeat = " seller_chat in chat_data |filter : {pro_id : Params_product , chat_type :'1'}  ">
+            <div>
+                <img class="profile-pic left" src="http://ionicframework.com/img/docs/venkman.jpg" />
+                <div class="chat-bubble left">
+                    <div class="message">
+                {{seller_chat.chat_detail}}
+                    </div>
+                    <div class="message-detail">
+                        <span class="bold">{{seller_chat.firstname}}</span>,
+                        <span>{{seller_chat.system_rec_datetime}}</span>
+                    </div>
+                </div>
+            </div>
+            <div class="cf"></div>
+        </div>
+        <div class="message-wrapper" ng-repeat = " seller_chat in chat_data |filter : {pro_id : Params_product , chat_type :'2'}  ">
+            <div>
+                <img class="profile-pic right" src="{{seller_chat.photo}}" />
+                <div class="chat-bubble right">
+                    <div class="message"  >
+                     {{seller_chat.chat_detail}}
+                    </div>
+                    <div class="message-detail">
+                      <span class="bold">{{seller_chat.firstname}}</span>
+                       <span>{{seller_chat.system_rec_datetime}}</span> 
+                    </div>
+                </div>
+            </div>
+            <div class="cf"></div>
+        </div>
+      
+    </ion-content>
+    <form name="sendMessageForm" novalidate>
+        <ion-footer-bar class="item-input-inset message-footer" keyboard-attach>
+            <label class="item-input-wrapper">
+                <input type="text" placeholder="message here" ng-model="chat_detail">
+                </textarea>
+            </label>
+            <button class="button button-icon icon ion-android-send" ng-click="Add_chat_data()">
+            </button>
+
+        </ion-footer-bar>
+        <div class="tab no-margin">
+        <a class="button button-outline button-dark">Leave Feedback</a>
+        <a class="button button-outline button-positive makeoffer" ui-sref="search.offer">Make an Offer</a>
+   
+    </form>
+    
+
+    
+</ion-view>

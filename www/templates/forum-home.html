@@ -1,0 +1,124 @@
+<ion-view hide-nav-bar="true" cache-view="false" >
+
+    <ion-content >
+        <!--
+        <button class="button button-dark button-fab button-fab-bottom-right" ng-click="modal_new.show()">
+            <i class="icon ion-plus"></i>
+        </button>
+        -->
+        <md-list flex  ng-repeat = "forum in join_data | filter : {cat_id: forum_params} |orderBy :'sys_rec_datetime':true">
+            <!--<md-divider></md-divider>
+                                <md-subheader class="md-no-sticky"></md-subheader>-->
+            <md-list-item class="md-3-line" ui-sref="app.forum-detail({id:forum.forum_id})">
+                <img src="{{forum.photo}}" class="md-avatar" alt="" />
+                <div class="md-list-item-text" layout="column">
+                    <h3>{{forum.username}}</h3>
+                    <span class="time">{{forum.sys_rec_datetime}}</span>
+                    <p>
+                       {{forum.forum_title}} 
+                    </p>
+                </div>
+            </md-list-item>
+          <!--   <md-list-item class="md-3-line" ui-sref="app.forum-detail({id:1})">
+                <img src="https://scontent.fbkk2-2.fna.fbcdn.net/t31.0-8/q84/p960x960/10733892_896416427069495_3722033796180074053_o.jpg" class="md-avatar" alt="Prasopchokk091" />
+                <div class="md-list-item-text" layout="column">
+                    <h3>Prasopchokk091</h3>
+                    <span class="time">5 May 2016</span>
+                    <p>
+                        ขาย เครื่องบันทึกกล้องวงจรปิด DVR Raysharp 960H 8 ช่อง ครับ
+                    </p>
+                </div>
+            </md-list-item>
+            <md-list-item class="md-3-line" ui-sref="app.forum-detail({id:1})">
+                <img src="https://scontent.fbkk1-2.fna.fbcdn.net/t31.0-8/s960x960/12901029_1068586706541502_6317454727540506776_o.jpg" class="md-avatar" alt="Saengaroon" />
+                <div class="md-list-item-text" layout="column">
+                    <h3>Saengaroon</h3>
+                    <span class="time">1 May 2016</span>
+                    <p>
+                        พีรพล ทักษิณทวีทรัพย์ รับซื้อขายป้ายทะเบียนประมูล ป้ายกราฟฟิค จัดหาป้ายเลขสวย
+                    </p>
+                </div>
+            </md-list-item>
+            <md-list-item class="md-3-line" ui-sref="app.forum-detail({id:1})">
+                <img src="https://scontent.fbkk1-2.fna.fbcdn.net/t31.0-8/s960x960/12901029_1068586706541502_6317454727540506776_o.jpg" class="md-avatar" alt="Saengaroon" />
+                <div class="md-list-item-text" layout="column">
+                    <h3>Saengaroon</h3>
+                    <span class="time">1 May 2016</span>
+                    <p>
+                        พีรพล ทักษิณทวีทรัพย์ รับซื้อขายป้ายทะเบียนประมูล ป้ายกราฟฟิค จัดหาป้ายเลขสวย
+                    </p>
+                </div>
+            </md-list-item>
+            <md-list-item class="md-3-line" ui-sref="app.forum-detail({id:1})">
+                <img src="https://scontent.fbkk1-2.fna.fbcdn.net/t31.0-8/s960x960/12901029_1068586706541502_6317454727540506776_o.jpg" class="md-avatar" alt="Saengaroon" />
+                <div class="md-list-item-text" layout="column">
+                    <h3>Saengaroon</h3>
+                    <span class="time">1 May 2016</span>
+                    <p>
+                        พีรพล ทักษิณทวีทรัพย์ รับซื้อขายป้ายทะเบียนประมูล ป้ายกราฟฟิค จัดหาป้ายเลขสวย
+                    </p>
+                </div>
+            </md-list-item>
+            <md-list-item class="md-3-line" ui-sref="app.forum-detail({id:1})">
+                <img src="https://scontent.fbkk1-2.fna.fbcdn.net/t31.0-8/s960x960/12901029_1068586706541502_6317454727540506776_o.jpg" class="md-avatar" alt="Saengaroon" />
+                <div class="md-list-item-text" layout="column">
+                    <h3>Saengaroon</h3>
+                    <span class="time">1 May 2016</span>
+                    <p>
+                        พีรพล ทักษิณทวีทรัพย์ รับซื้อขายป้ายทะเบียนประมูล ป้ายกราฟฟิค จัดหาป้ายเลขสวย
+                    </p>
+                </div>
+            </md-list-item>
+            <md-list-item class="md-3-line" ui-sref="app.forum-detail({id:1})">
+                <img src="https://scontent.fbkk1-2.fna.fbcdn.net/t31.0-8/s960x960/12901029_1068586706541502_6317454727540506776_o.jpg" class="md-avatar" alt="Saengaroon" />
+                <div class="md-list-item-text" layout="column">
+                    <h3>Saengaroon</h3>
+                    <span class="time">1 May 2016</span>
+                    <p>
+                        พีรพล ทักษิณทวีทรัพย์ รับซื้อขายป้ายทะเบียนประมูล ป้ายกราฟฟิค จัดหาป้ายเลขสวย
+                    </p>
+                </div>
+            </md-list-item>
+            <md-list-item class="md-3-line" ui-sref="app.forum-detail({id:1})">
+                <img src="https://scontent.fbkk1-2.fna.fbcdn.net/t31.0-8/s960x960/12901029_1068586706541502_6317454727540506776_o.jpg" class="md-avatar" alt="Saengaroon" />
+                <div class="md-list-item-text" layout="column">
+                    <h3>Saengaroon</h3>
+                    <span class="time">1 May 2016</span>
+                    <p>
+                        พีรพล ทักษิณทวีทรัพย์ รับซื้อขายป้ายทะเบียนประมูล ป้ายกราฟฟิค จัดหาป้ายเลขสวย
+                    </p>
+                </div>
+            </md-list-item>
+            <md-list-item class="md-3-line" ui-sref="app.forum-detail({id:1})">
+                <img src="https://scontent.fbkk1-2.fna.fbcdn.net/t31.0-8/s960x960/12901029_1068586706541502_6317454727540506776_o.jpg" class="md-avatar" alt="Saengaroon" />
+                <div class="md-list-item-text" layout="column">
+                    <h3>Saengaroon</h3>
+                    <span class="time">1 May 2016</span>
+                    <p>
+                        พีรพล ทักษิณทวีทรัพย์ รับซื้อขายป้ายทะเบียนประมูล ป้ายกราฟฟิค จัดหาป้ายเลขสวย
+                    </p>
+                </div>
+            </md-list-item>
+            <md-list-item class="md-3-line" ui-sref="app.forum-detail({id:1})">
+                <img src="https://scontent.fbkk1-2.fna.fbcdn.net/t31.0-8/s960x960/12901029_1068586706541502_6317454727540506776_o.jpg" class="md-avatar" alt="Saengaroon" />
+                <div class="md-list-item-text" layout="column">
+                    <h3>Saengaroon</h3>
+                    <span class="time">1 May 2016</span>
+                    <p>
+                        พีรพล ทักษิณทวีทรัพย์ รับซื้อขายป้ายทะเบียนประมูล ป้ายกราฟฟิค จัดหาป้ายเลขสวย
+                    </p>
+                </div>
+            </md-list-item>
+            <md-list-item class="md-3-line" ui-sref="app.forum-detail({id:1})">
+                <img src="https://scontent.fbkk1-2.fna.fbcdn.net/t31.0-8/s960x960/12901029_1068586706541502_6317454727540506776_o.jpg" class="md-avatar" alt="Saengaroon" />
+                <div class="md-list-item-text" layout="column">
+                    <h3>Saengaroon</h3>
+                    <span class="time">1 May 2016</span>
+                    <p>
+                        พีรพล ทักษิณทวีทรัพย์ รับซื้อขายป้ายทะเบียนประมูล ป้ายกราฟฟิค จัดหาป้ายเลขสวย
+                    </p>
+                </div>
+            </md-list-item> -->
+        </md-list>
+    </ion-content>
+</ion-view>

@@ -1,0 +1,10 @@
+<ion-view class="forum">
+    <ion-content class="content">
+        <ion-list  ng-repeat=" cat in search_categorie ">
+            <ion-item class="item item-icon-right" value="cat.cat_id" ui-sref="app.forum-home({id:cat.cat_id})">
+                {{cat.cat_name}} <i class="icon ion-chevron-right"></i>
+            </ion-item>
+       
+        </ion-list>
+    </ion-content>
+</ion-view>

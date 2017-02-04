@@ -1,0 +1,76 @@
+<ion-nav-bar class='search'>
+    <div class="bar bar-header bar-stable item-input-inset">
+        <button class="button button-icon button-clear ion-chevron-left" ng-click="myGoBack()" ui-sref="app.browse">
+        </button>
+        <label class="item-input-wrapper">
+            <i class="icon ion-ios-search placeholder-icon"></i>
+            <input type="search" placeholder="Search">
+        </label>
+        <button class="button button-icon button-clear ion-archive" ui-sref="search.inbox">
+            <span class="badge badge-assertive" style="top: -7px;left: -15px;padding:2px 6px;font-size:12px">5</span>
+        </button>
+    </div>
+    <div class="searchbox list">
+        <div class="row box">
+            <div class="col border-right">
+                <label>CATEGORY</label>
+                <label class="item item-input item-select">
+                    <input type="text" name="" ng-model="categorie123" style="outline:none;" readonly="readonly" ng-click="modal_categorie12.show()" > 
+
+
+                    <!--<select disabled="true" >
+                    <option selected>ALL</option>
+                    <option>FOR HER</option>
+                    <option>BEAUTY</option>
+                    <option>DESIGN & CRAFT</option>
+                    <option>LIFTSTYLE GADGETS</option>
+                    <option>FOR HIM</option>
+                    <option>SPORTING GEAR</option>
+                    <option>PHOTOGRAPHY</option>
+                    <option>LUXURY</option>
+                    <option>VINTACG & ANTIQUES</option>
+                    <option>GAME & TOYS</option>
+                    <option>FURNITURE & HOME</option>
+                    <option>TEXTBOOKS</option>
+                    <option>BOOKS</option>
+                    <option>MUSIC INSTRUMENTS</option>
+                    <option>KITCHEN & APPLIANCES</option>
+                    <option>BABY & KIDS</option>
+                    <option>PET ACCESSORIES</option>
+                    <option>TICKETS/VOUCHERS</option>
+                    <option>CAR & MOTORS</option>
+                    <option>LOOKING FOR</option>
+                    <option>HOUSING</option>
+                    <option>COMMUNITY</option>
+                    <option>EVERYTHING ELSE</option>
+                </select>-->
+                </label>
+            </div>
+            <div class="searchbox col border-right">
+                <label>BRAND</label>
+                <label class="item item-input item-select">
+                    <input type="text" name="" ng-model="brand123" style="outline:none;" readonly="readonly" ng-click="modal_brand12.show()">
+                    <!--<select>
+                    <option selected>ALL</option>
+                    <option>SAMSUNG</option>
+                    <option>LENOVO</option>
+                    <option>HP</option>
+                </select>-->
+                </label>
+            </div>
+            <div class="searchbox col">
+                <label>SORT/FILTER</label>
+                <label class="item item-input item-select">
+                    <input type="text" name="" ng-model="filter_text" style="outline:none;" readonly="readonly" ng-click="modal_filter.show()">
+                </label>
+            </div>
+        </div>
+    </div>
+   
+    </div>
+
+
+</ion-nav-bar>
+<ion-nav-view name="fabContent"></ion-nav-view>
+<ion-nav-view name="menuContent"></ion-nav-view>
+

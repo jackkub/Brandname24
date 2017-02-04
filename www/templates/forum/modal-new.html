@@ -1,0 +1,28 @@
+<ion-modal-view>
+    <ion-header-bar align-title="center" class="bar bar-header bar-stable">
+        <button class="button button-icon button-clear ion-chevron-left" ng-click="modal_new.hide()">
+        </button>
+        <h1 class="title">New Topic</h1>
+        <button class="button button-icon button-clear ion-paper-airplane" ng-click="SaveNewTopic();modal_new.hide()" >
+        </button>
+    </ion-header-bar>
+    <ion-content class="padding">
+        <form name="userForm">
+        <div layout-gt-sm="row">
+          <md-input-container class="md-block" flex-gt-sm>
+         <!--    <label>Sub Form</label>
+         <input ng-model="forum.form" ng-keyup="SetmodalNewTopic(forum)">
+                   </md-input-container> -->
+          <md-input-container class="md-block" flex-gt-sm>
+            <label>Title</label>
+            <input ng-model="forum.title" ng-keyup="SetmodalNewTopic(forum)">
+          </md-input-container>
+        </div>
+        <md-input-container class="md-block">
+          <label>Body</label>
+          <textarea ng-model="forum.body" md-maxlength="150" rows="5" md-select-on-focus ng-keyup="SetmodalNewTopic(forum)"></textarea>
+        </md-input-container>
+        
+      </form>
+    </ion-content>
+</ion-modal-view>

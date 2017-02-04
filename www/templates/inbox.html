@@ -1,0 +1,64 @@
+<ion-view hide-nav-bar="true" class="inbox">
+    <div class="bar bar-header bar-stable item-input-inset">
+        <button class="button button-icon button-clear ion-chevron-left" ng-click="myGoBack()">
+        </button>
+        <h1 class="title">Inbox</h1>
+    </div>
+    <ion-content class="content">
+        <div ng-cloak>
+            <md-content>
+                <md-tabs md-dynamic-height md-border-bottom>
+                    <md-tab label="ALL">
+                        <div ng-repeat=" msg in list_data |filter : {log_to : list_log.userid} | orderBy:'date ':true | limitTo:1">
+                            <md-content ng-show="msg.log_by != login_id.userid">
+                                <md-list flex ui-sref="search.chat({id:msg.pro_id,seller:msg.log_to,buyer:msg.log_by})">
+                                    <span ng-repeat=" user in profile |filter : {userid : msg.log_by}">
+                                     <!-- span ng-repeat=" user_product in list_log |filter : {userid : msg.log_to , pro_id:msg.pro_id}"> -->
+                                        <md-list-item class="md-2-line" ng-click="null">
+                                            <img class="profile-pic right" src="{{msg.chat_photo}}" style="width: 60px;height: 60px;" />
+                                            <div class="md-list-item-text" layout="column">
+                                        <h3><a style=" margin-left:10px">{{user.username}}</a><h3>
+                                                <h3 style=" margin-left:10px">{{msg.date}}</h3>
+                                                <p  style=" margin-left:10px">
+                                                  {{msg.detail}}
+                                                </p>
+                                                <p  style=" margin-left:10px">
+                                                    <span class="accepted">Accepted</span> Offered you {{msg.pro_offer}}
+                                                </p>
+                                            </div>
+                                            <md-list-item>
+                                                </span>
+                                </md-list>
+                            </md-content>
+                            </div>
+                    </md-tab>
+                    <md-tab label="BUYING">
+                        <md-content class="md-padding">
+                            <div class="no-inbox">Your inbox is lonely :(</div>
+                        </md-content>
+                    </md-tab>
+                    <md-tab label="SELLING">
+                        <md-content>
+                            <md-list flex>
+                                <!--<md-divider></md-divider>
+                                <md-subheader class="md-no-sticky"></md-subheader>-->
+                                <md-list-item class="md-3-line" ng-click="null">
+                                    <img src="{{msg.chat_photo}}" class="md-avatar" alt="Flook Chalermpong Chomputip" />
+                                    <div class="md-list-item-text" layout="column">
+                                        <h3>Flook Chalermpong Chomputip</h3>
+                                        <h4>สีเหลืองเรืองรอง เจ้าของขายเหมาเซ็ต ถูกเหมือนได้ฟรี</h4>
+                                        <p>
+                                            Sorry please make a better
+                                        </p>
+                                        <p>
+                                            <span class="accepted">Accepted</span> Offered you ฿ 15,000
+                                        </p>
+                                    </div>
+                                </md-list-item>
+                        </md-content>
+                    </md-tab>
+                </md-tabs>
+            </md-content>
+            </div>
+    </ion-content>
+</ion-view>

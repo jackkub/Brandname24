@@ -1,0 +1,13 @@
+<ion-modal-view>
+    <ion-header-bar align-title="center" class="bar bar-header bar-stable">
+        <button class="button button-icon button-clear ion-chevron-left" ng-click="modal_country.hide()">
+        </button>
+        <h1 class="title">Country</h1>
+    </ion-header-bar>
+    <ion-content class="padding">
+        <ion-list>
+            <ion-radio ng-repeat="c in country" ng-model="_country" ng-value="c.id+','+c.name" ng-click="SetmodalCountry(_country)">{{c.name}}</ion-radio>
+            
+        </ion-list>
+    </ion-content>
+</ion-modal-view>

@@ -1,0 +1,13 @@
+<ion-modal-view>
+    <ion-header-bar align-title="center" class="bar bar-header bar-stable">
+        <button class="button button-icon button-clear ion-chevron-left" ng-click="modal_brand12.hide()">
+        </button>
+        <h1 class="title">Brand1</h1>
+    </ion-header-bar>
+    <ion-content class="padding">
+        <ion-list>
+            <ion-radio ng-model="brand12" ng-value="''" ng-click="SetmodalBrand(brand12)">All</ion-radio>
+            <ion-radio ng-repeat = "brand in search_brand " ng-value="'{{brand.bra_id}},{{brand.bra_name}}'" ng-model="brand12"  ng-click="SetmodalBrand(brand12)">{{brand.bra_name}}</ion-radio>
+           
+    </ion-content>
+</ion-modal-view>

@@ -1,0 +1,21 @@
+<ion-view hide-nav-bar="true">
+    <div class="bar bar-header bar-stable item-input-inset">
+        <button class="button button-icon button-clear ion-chevron-left" ng-click="myGoBack()">
+        </button>
+        <h1 class="title">Setting</h1>
+    </div>
+    <ion-content class="setting content padding">
+        <p>VERSION 1.0</p>
+        <div class="list">
+            <a class="item" ng-click="modal_share.show()">
+                Share Setting
+            </a>
+            <a class="item" ng-click="modal_notification.show()">
+                Notification Setting
+            </a>
+            <a class="item" ui-sref="app.login" ng-click='logout()'>
+                Logout
+            </a>
+        </div>
+    </ion-content>
+</ion-view>

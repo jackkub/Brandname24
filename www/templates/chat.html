@@ -1,0 +1,79 @@
+<ion-view id="userMessagesView" hide-nav-bar="true" class="chat">
+  
+    <div class="bar bar-header bar-stable item-input-inset">
+        <button class="button button-icon button-clear ion-chevron-left" ng-click="myGoBack()">
+        </button>
+
+        <h1 class="title" ng-repeat = "pro_duct in pro_data |filter :{pro_id : Params_product} " >
+        {{pro_duct.username}}<br>
+        <label>tab here for more info</label>
+        </h1>
+        <button class="button button-icon button-clear ion-loop" >
+        </button>
+    </div>
+    
+    <ion-content class="content" has-bouncing="true" delegate-handle="userMessageScroll"  ng-repeat = "pro_duct1 in pro_data |filter :{pro_id : Params_product} " >
+        <div class="card no-padding no-margin">
+            <a class="item item-thumbnail-left" href="#">
+                <img src="{{server}}:{{port}}/api/v2/files/img/{{product[0].pro_photo.split(',')[0]}}?api_key={{api_key}}">
+                <h3>{{pro_duct1.pro_name}}</h3>
+                <label class="text">฿{{pro_duct1.pro_price}}</label>
+            </a>
+        </div>
+        
+     <div class="message-wrapper"  ng-repeat="msg in message |filter : myFilter "   >
+            <div  ng-show ="msg.chat_by != login_id[0].userid">
+                <img class="profile-pic left"  src="{{msg.chat_photo}}" />
+                <div class="chat-bubble left" >
+                    <div class="message">
+                {{msg.chat_detail}}
+                {{msg.date}}
+                    </div>
+                    <div class="message-detail">
+                     <!--    <span class="bold">{{msg.chat_by}}</span> -->
+                      <span am-time-ago="conv_time(msg.date)"></span>
+                    </div>
+                </div>
+            </div>
+            <div class="cf"></div>
+      
+        <!-- chat_by : login_chat[0].face_id  -->
+            <div ng-show="msg.chat_by == login_id[0].userid ">
+                <img class="profile-pic right"  src="{{msg.chat_photo}}" / >
+                <div class="chat-bubble right " >
+                    <div class="message" >
+                      {{msg.chat_detail}}
+                    </div>
+                   
+                    <div class="message-detail">
+            <!--           <span class="bold">{{msg.chat_by}}</span> -->
+                  <span am-time-ago="conv_time(msg.date)"></span>
+                    </div>
+                </div>
+            </div>
+            <div class="cf"></div>
+        </div>
+      
+    </ion-content>
+    <form name="sendMessageForm"  >
+        <ion-footer-bar class="item-input-inset message-footer" keyboard-attach>
+            <label class="item-input-wrapper">
+                <input type="text" placeholder="message here" ng-model="chat_detail" >
+                </textarea>
+            </label>
+          
+            <button class="button button-icon icon ion-android-send" type="button"  ng-click="Add_chat_data()" >
+            </button>
+
+<!-- <button type="button" ng-click=test()></button> -->
+        </ion-footer-bar>
+        <div class="tab no-margin">
+        <a class="button button-outline button-dark">Leave Feedback</a>
+        <a class="button button-outline button-positive makeoffer" ng-show="login_chat.userid == Params_buyer"  ui-sref="search.offer({id:Params_product})" >Make an Offer</a>
+        <a class="button button-outline button-positive makeoffer" value="1"  ng-show = "login_chat.userid == Params_seller" ng-click="Update_chat_status(id=1)">Accepted</a>
+        <a class="button button-outline button-positive makeoffer " ng-show = "login_chat.userid == Params_seller"  ui-sref="search.offer({id:product[0].pro_id,seller:product[0].pro_seller,buyer:login_id.userid})" ng-click="Update_chat_status(id=0)">Decline</a>
+    </form>
+    
+
+    
+</ion-view>

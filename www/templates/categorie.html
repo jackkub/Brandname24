@@ -1,0 +1,33 @@
+<ion-view class=" category">
+    <ion-content style="" >
+
+ <!--     <div ng-repeat = "l in product  |filter :categorie12 : brand12">
+          <div class="row" ng-if="$even"> -->
+
+        <div class="row" ng-repeat = "l in shop_orderby  |filter :{ cat_id :categorie12 , bra_id : brand12 }  ">
+            <div class="col col-100 " >
+                <div class="list card no-margin" >
+                    <div class="item item-avatar" >
+                    <a >{{l.pro_name}}</a>
+                    </div> 
+                    <div class="item item-body"><center>
+                        <img src="{{server}}:{{port}}/api/v2/files/img/{{l.pro_photo.split(',')[0]}}?api_key={{api_key}}" ui-sref="search.detail({id:l.pro_id,seller:l.pro_seller})"  style="width:100%;height:100%"></center>
+                      
+                        <p class="item-body-text" style="text-align:left" >{{l.pro_detail}} </p>
+                        <p class="item-body-text" style="text-align:left">{{l.pro_price | number:2}}</p>
+                        </h3>
+                    </div>
+                    <div class="item tabs tabs-secondary tabs-icon-left">
+                        <a class="tab-item" ng-click="btn_like(l.pro_id,$index)" style="color:{{like[$index]}}">
+                            <i class="icon ion-ios-heart"></i>{{like_qut[$index]}} Like
+                        </a>
+                        <a class="tab-item" href="">
+                            <i class="icon ion-android-share"></i> Share
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div><!-- </div></div> -->
+    
+    </ion-content>
+</ion-view>

@@ -1,0 +1,22 @@
+<ion-modal-view>
+    <ion-header-bar align-title="center" class="bar bar-header bar-stable">
+        <button class="button button-icon button-clear ion-chevron-left" ng-click="modal_desc.hide()">
+        </button>
+        <h1 class="title">Description</h1>
+        <button class="button button-icon button-clear ion-checkmark" ng-click="modal_desc.hide()">
+        </button>
+    </ion-header-bar>
+    <ion-content class="padding">
+        <div class="list">
+            <label class="item item-input item-floating-label">
+                <span class="input-label">Name of the item you selling</span>
+                <input type="text" placeholder="Name of the item you selling" ng-model="desc.name" ng-keyup="SetmodalSellDesc(desc)">
+            </label>
+            <label class="item item-input item-floating-label">
+                <span class="input-label">Describe your item</span>
+                <textarea placeholder="(Option)\n Describe what you are selling E.g. size,color, etc." ng-model="desc.desc" rows="5" ng-keyup="SetmodalSellDesc(desc)"></textarea>
+            </label>
+            
+        </div>
+    </ion-content>
+</ion-modal-view>

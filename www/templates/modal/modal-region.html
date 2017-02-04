@@ -1,0 +1,13 @@
+<ion-modal-view>
+    <ion-header-bar align-title="center" class="bar bar-header bar-stable">
+        <button class="button button-icon button-clear ion-chevron-left" ng-click="modal_region.hide()">
+        </button>
+        <h1 class="title">Region</h1>
+    </ion-header-bar>
+    <ion-content class="padding">
+        <ion-list>
+            {{country_id}} {{region.length}}
+            <ion-radio ng-repeat="r in region | filter:{id:'MM-'}" ng-model="_region" ng-value="r.id+','+r.name" ng-click="SetmodalRegion(_region)">{{r.name}}</ion-radio>
+        </ion-list>
+    </ion-content>
+</ion-modal-view>

@@ -1,0 +1,123 @@
+<ion-view hide-nav-bar="true" class="sell" ng-controller= "myCtrl">
+    <div class="bar bar-header bar-stable item-input-inset">
+        <button class="button button-icon button-clear ion-chevron-left" ng-click="showConfirmBack()">
+        </button>
+        <h1 class="title">
+        Sell
+        </h1>
+      <!--   <button class="button-assertive " assertive class="button button-icon button-clear ion-checkmark" ng-click="uploadFile();showConfirm()"> -->
+        </button>
+    </div>
+    <ion-content class="content">
+        <div class="row image-box"  >
+            <div class="col col-25">
+                <label for="file-input">
+                    <div class="image-upload" >
+                        <img class="picture" id="blah" ng-src="{{imgURI[4]}}" ng-hide="showme1" ng-show="showme1" ng-hide="showme1"/ ng-click="takeGallery(4)">
+                        <input type='file' id="file-input" onchange="readURL(this);" file-model="myFile"  ng-show="showme1" ng-hide="showme1" />  
+                    </div>
+                </label>
+                   <img class="picture" ng-src="{{imgURI[0]}}" ng-click="takePicture(0)" ng-show="showme1" file-model="myFile" >
+            </div>
+            <div class="col col-25">
+                <label for="file-input1">
+                    <div class="image-upload">
+                        <img class="picture" id="blah1" ng-src="{{imgURI[5]}}"  ng-show="showme2" ng-hide="showme2"/  ng-click="takeGallery(5)" >
+                        <input type='file' id="file-input1" onchange="readURL1(this);" file-model="myFile1" ng-show="showme2" ng-hide="showme2"/>
+                    </div>
+                </label>
+                  <img class="picture" ng-src="{{imgURI[1]}}" ng-click="takePicture(1)" ng-show="showme2" file-model="myFile1" >
+            </div>
+            <div class="col col-25">
+                <label for="file-input2">
+                    <div class="image-upload">
+                        <img class="picture" id="blah2" ng-src="{{imgURI[6]}}" ng-show="showme3" ng-hide="showme3"/  ng-click="takeGallery(6)">
+                        <input type='file' id="file-input2" onchange="readURL2(this);" file-model="myFile2" ng-show="showme3" ng-hide="showme3"/>
+                    </div>
+                </label>
+                <img class="picture" ng-src="{{imgURI[2]}}" ng-click="takePicture(2)"  ng-show="showme3" file-model="myFile2" >
+            </div>
+            <div class="col col-25">
+                <label for="file-input3">
+                    <div class="image-upload">
+                        <img class="picture" id="blah3" ng-src="{{imgURI[7]}}"  ng-show="showme4" ng-hide="showme4" /  ng-click="takeGallery(7)">
+                        <input type='file' id="file-input3" onchange="readURL3(this);" file-model="myFile3" ng-show="showme3" ng-hide="showme3"  ng-show="showme4" ng-hide="showme4"/ >
+                    </div>
+                </label>
+                  <img class="picture" ng-src="{{imgURI[3]}}" ng-click="takePicture(3)" ng-show="showme4" file-model="myFile3"  >
+            </div>
+        </div>
+       <div class="row ">
+           <div class="col col-25"> 
+            <button class="button-assertive " assertive  ng-click="showme1=false" ng-show="showme1" ><span style="font-size:9px"> Selecct Image</span></button>
+            <button class="button-assertive " assertive ng-click="showme1=true" ng-hide="showme1" ng-show="showme1"><span style="font-size:11px"> Take Picture</span></button>
+           </div>
+           <div class="col col-25">
+         <button class="button-assertive " assertive ng-click="showme2=false" ng-show="showme2" ><span style="font-size:9px"> Selecct Image</span></button>
+            <button class="button-assertive " assertive ng-click="showme2=true" ng-hide="showme2" ng-show="showme2"> <span style="font-size:11px">Take Picture</span></button>
+           </div>
+           <div class="col col-25">
+               <button class="button-assertive " assertive ng-click="showme3=false" ng-show="showme3" ><span style="font-size:9px"> Selecct Image</span></button>
+            <button class="button-assertive " assertive ng-click="showme3=true" ng-hide="showme3" ng-show="showme3"><span style="font-size:11px"> Take Picture</span></button>
+           </div>
+           <div class="col col-25">
+                <button class="button-assertive " assertive ng-click="showme4=false" ng-show="showme4" ><span style="font-size:9px"> Selecct Image</span></button>
+            <button class="button-assertive " assertive ng-click="showme4=true" ng-hide="showme4" ng-show="showme4"><span style="font-size:11px"> Take Picture</span></button>
+           </div>
+       </div>
+
+
+        <div class="list">
+            <div class="item item-divider">
+                DETAILS
+            </div>
+            <a class="item item-icon-left item-icon-right" ng-click="modal_categorie.show()">
+                <i class="icon ion-navicon-round"></i> Category
+                <span class="item-note">
+            {{cat_name}}
+          </span>
+                <i class="icon ion-arrow-right-c"></i>
+            </a>
+            <a class="item item-icon-left item-icon-right" ng-click="modal_brand1.show()">
+                <i class="icon ion-cube"></i> Brand
+                <span class="item-note">
+            {{brand_name}}
+          </span>
+                <i class="icon ion-arrow-right-c"></i>
+            </a>
+            <a class="item item-icon-left" ng-click="modal_desc.show()">
+                <i class="icon ion-ios-information-outline"></i> Item
+                <span class="item-note">
+            {{desc_name}}
+          </span>
+            </a>
+            <a class="item item-icon-left">
+                <i class="icon ion-ios-pricetags"></i>Price
+                <span class="item-note">
+                    <input type="number" placeholder="Set Price" ng-model="pro_price">
+                </span>
+            </a>
+            <div class="item item-divider">
+                SHARING
+            </div>
+            <li class="item item-toggle">
+                Facebook
+                <label class="toggle toggle-positive">
+                    <input type="checkbox" checked="checkbox">
+                    <div class="track">
+                        <div class="handle"></div>
+                    </div>
+                </label>
+            </li>
+     
+        </div>          
+              <div ng-controller= "myCtrl">
+         <a class="button button-full icon-left button-positive ion-bag"  ng-click="uploadFile();showConfirm()""><center>Save</center></a>
+       <!--     // <button class="button-assertive " assertive ng-click="uploadFile()"> Save</button> -->
+     
+       </div>
+  <br><br><br>
+     
+
+    </ion-content>
+</ion-view>

@@ -1,0 +1,88 @@
+<ion-view hide-nav-bar="true" class="category_detail">
+    <div class="bar bar-header bar-stable item-input-inset">
+        <button class="button button-icon button-clear ion-chevron-left" ui-sref="search.categorie">
+        </button><!-- ng-click="myGoBack()" -->
+        <h1 class="title">{{product1[0].pro_name}}</h1>
+    </div>
+    <ion-content class="content">
+        <ion-slide-box on-slide-changed="slideChanged(index)">
+            <ion-slide>
+                <img src="{{server}}:{{port}}/api/v2/files/img/{{product[0].pro_photo.split(',')[0]}}?api_key={{api_key}}" 
+">
+            </ion-slide>
+            <ion-slide>
+                <img src="{{server}}:{{port}}/api/v2/files/img/{{product[0].pro_photo.split(',')[1]}}?api_key={{api_key}}" 
+">
+            </ion-slide>
+            <ion-slide>
+                <img src="{{server}}:{{port}}/api/v2/files/img/{{product[0].pro_photo.split(',')[2]}}?api_key={{api_key}}" 
+">
+            </ion-slide>
+            <ion-slide>
+                <img src="{{server}}:{{port}}/api/v2/files/img/{{product[0].pro_photo.split(',')[3]}}?api_key={{api_key}}" 
+">
+            </ion-slide>
+         <!--    <ion-slide>
+                <img src="/image/{{pro.pro_photo1}}">
+            </ion-slide> -->
+        </ion-slide-box>
+        <div class="row"></div>
+        <div class="list card">
+            <div class="item item-text-wrap">
+                <span am-time-ago="conv_time(product1[0].sys_rec_datetime)"></span> 
+                <label class="text">by</label>
+                {{product1[0].seller_name}}
+            </div>
+            <div class="item item-text-wrap">
+                
+          <div>
+                    <i >Detail :</i>
+                    <label> {{product1[0].pro_detail}}</label>
+                </div>
+                <div>
+                    <i class="icon-detail ion-ios-pricetags-outline"></i>
+                    <label>{{product1[0].pro_price | number :2}}</label>
+                </div>
+                <div>
+                    <i class="icon-detail ion-ios-heart-outline"></i>
+                    <label class="text"> {{like_qut.like_pro}}</label>
+                </div>
+            </div>
+            <div class="item item-divider">
+                Share This Listing
+            </div>
+            <div class="item item-text-wrap">
+                <div class="list-social">
+                    <button class="button button-fab button-assertive icon ion-social-googleplus no-padding" ng-click="shareAnywhere()"></button>
+                    <button class="button button-fab button-calm icon ion-social-twitter no-padding"></button>
+                    <button class="button button-fab button-positive icon ion-social-instagram-outline no-padding"></button>
+                    <button class="button button-fab button-positive icon ion-social-facebook no-padding"></button>
+                    <!--<button class="button button-fab button-dark icon ion-android-share-alt" data-ink-opacity=".1"></button>-->
+                </div>
+            </div>
+            <div class="item item-divider">
+                Meet the seller
+            </div>
+            <div class="item item-text-wrap">
+                <div class="list no-margin">
+                    <a class="item item-thumbnail-left">
+                        <img src="{{product[0].photo}}">
+                        <label class="text">{{product1[0].seller_name}}</label>
+                        <p>Join on {{product1[0].seller_join}}</p>
+                        <p>Verified <i class="icon ion-social-facebook box-facebook"></i></p>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </ion-content>
+    <div class="tab no-margin">
+        <a class="like-box" style="color:{{color}}" ng-click="btn_like()">
+            <i class="ion-ios-heart"></i><label>Like</label>
+        </a>
+        <a class="button button-full icon-left button-dark ion-ios-chatbubble-outline" ng-show=" Params_seller != login_id.userid" ui-sref="search.chat({id:product[0].pro_id,seller:product[0].pro_seller,buyer:login_id.userid})">Chat</a>
+        <a class="button button-full icon-left button-positive ion-bag" ng-show=" Params_seller != login_id.userid" ui-sref="search.offer({id:product[0].pro_id,seller:product[0].pro_seller,buyer:login_id.userid})">Buy Now</a>
+ <a class="button button-full icon-left button-positive ion-bag" ui-sref="search.inbox" ng-show=" Params_seller == login_id.userid"><center>In box</center></a>
+
+
+    </div>
+</ion-view>
